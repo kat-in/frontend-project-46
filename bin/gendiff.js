@@ -9,7 +9,6 @@ import genDiff from "../index.js";
 program
   .argument("<filepath1>")
   .argument("<filepath2>")
-  .argument("[type]")
   .description("Compares two configuration files and shows a difference.")
   .version("0.0.1", "-V, --version", "output the version number")
   .option("-f, --format [type]", "output format")
@@ -23,7 +22,8 @@ program
         return yaml.load(readFileSync(newPath, { encoding: "UTF-8" }));
       }
     };
-    console.log(genDiff(format(filepath1), format(filepath2)));
+    const options = program.opts();
+    console.log(genDiff(format(filepath1), format(filepath2), options.format));
   })
   .helpOption("-h, --help", "output usage information");
 
