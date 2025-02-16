@@ -1,7 +1,7 @@
 install:	
 	npm ci
 gendiff:
-	node bin/gendiff.js
+	bin/gendiff.js
 lint:
 	npx eslint .
 publish:

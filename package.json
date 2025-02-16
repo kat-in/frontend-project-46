@@ -13,7 +13,8 @@
   "author": "Ekaterina Kryukova",
   "license": "ISC",
   "dependencies": {
-    "commander": "^13.1.0"
+    "commander": "^13.1.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "eslint": "^8.57.1",
