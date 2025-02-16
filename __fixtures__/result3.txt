@@ -1,11 +1,6 @@
 {
-  - follow: false
-  - host: hexlet.io
-  - proxy: 123.234.53.22
-  - timeout: 50
-  + age: 16
-  + gpa: 3.61
-  + issues: null
-  + male: false
-  + name: “HARRY”
+    follow: false
+    host: hexlet.io
+    proxy: 123.234.53.22
+    timeout: 50
 }

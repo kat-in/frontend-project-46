@@ -1,6 +1,4 @@
----
-male: false
-gpa: 3.61
-issues: null
-name: “HARRY”
-age: 16
+host: hexlet.io
+timeout: 50
+proxy: 123.234.53.22
+follow: false
