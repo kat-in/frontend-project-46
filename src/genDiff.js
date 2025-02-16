@@ -45,6 +45,7 @@ const genDiff = (file1, file2, type = "stylish") => {
     });
     return _.join(difference, "\n");
   }
+  throw new Error("The selected type is not supported");
 };
 
 export default genDiff;
