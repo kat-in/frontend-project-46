@@ -8,3 +8,7 @@
 Пример сравнения плоских файлов:
 
 [![asciicast](https://asciinema.org/a/kWZOZLdQTJMZrB76qbF0vnD9n.svg)](https://asciinema.org/a/kWZOZLdQTJMZrB76qbF0vnD9n)
+
+Сравнение файлов yml, json и yml, формат plain
+
+[![asciicast](https://asciinema.org/a/b7pvZEulcLxyhSiq87zQE1S3n.svg)](https://asciinema.org/a/b7pvZEulcLxyhSiq87zQE1S3n)
