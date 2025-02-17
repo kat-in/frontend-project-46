@@ -1,4 +1,3 @@
-import genDiff from "./src/genDiff.js";
 import parsers from "./src/parsers.js";
 import stylish from "./src/stylish.js";
 import path from "node:path";
@@ -13,7 +12,7 @@ const compareFiles = (file1, file2, format) => {
   const content2 = fs.readFileSync(path.resolve(file2), "UTF-8");
   const firstObject = parsers(content1, fileFormat(file1));
   const secondObject = parsers(content2, fileFormat(file2));
-  const compareObject = genDiff(firstObject, secondObject);
+  const compareObject = buildTree(firstObject, secondObject);
   let data;
   switch (format) {
     case "stylish":
@@ -23,7 +22,7 @@ const compareFiles = (file1, file2, format) => {
       break;
   }
   console.log(data);
-  // return fs.writeFileSync("./__fixtures__/resultTree.txt", data);
+  return fs.writeFileSync("./__fixtures__/resultTree.txt", data);
 };
 
 export default compareFiles;
