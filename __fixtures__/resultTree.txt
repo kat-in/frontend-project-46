@@ -1,0 +1,88 @@
+{
+....common: {
+........follow: {
+....  + follow: false
+
+
+........}
+........setting1: {
+
+
+
+........}
+........setting2: {
+....  - setting2: 200
+
+
+........}
+........setting3: {
+....  - setting3: true
+....  + setting3: null
+
+
+
+........}
+........setting4: {
+....  + setting4: blah blah
+
+
+........}
+........setting5: {
+....  + setting5: [object Object]
+
+
+........}
+........setting6: {
+............doge: {
+................wow: {
+............  - wow: 
+............  + wow: so much
+
+
+
+................}
+............}
+............key: {
+
+
+
+............}
+............ops: {
+........  + ops: vops
+
+
+............}
+........}
+....}
+....group1: {
+........baz: {
+....  - baz: bas
+....  + baz: bars
+
+
+
+........}
+........foo: {
+
+
+
+........}
+........nest: {
+....  - nest: [object Object]
+....  + nest: str
+
+
+
+........}
+....}
+....group2: {
+  - group2: [object Object]
+
+
+....}
+....group3: {
+  + group3: [object Object]
+
+
+....}
+}

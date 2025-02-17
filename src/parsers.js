@@ -1,19 +1,13 @@
-import { readFileSync } from 'node:fs';
-import { cwd } from 'node:process';
-import path from 'node:path';
-import yaml from 'js-yaml';
+import yaml from "js-yaml";
 
-const parsers = (filepath) => {
-  const format = path.extname(filepath);
-  const newPath = path.resolve(cwd(), filepath);
-  let parse;
-  if (format === '.json') {
-    parse = JSON.parse;
+const parsers = (file, format) => {
+  if (format === ".json") {
+    return JSON.parse(file);
   }
-  if (format === '.yml' || format === '.yaml') {
-    parse = yaml.load;
+  if (format === ".yml" || format === ".yaml") {
+    return yaml.load(file);
   }
-  return parse(readFileSync(newPath, { encoding: 'UTF-8' }));
+  throw new Error("Unknown format");
 };
 
 export default parsers;
