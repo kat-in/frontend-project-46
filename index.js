@@ -1,7 +1,8 @@
 import path from 'node:path';
 import fs from 'fs';
 import parsers from './src/parsers.js';
-import stylish from './src/stylish.js';
+import stylish from './src/formatters/stylish.js';
+import plain from './src/formatters/plain.js';
 import buildTree from './src/buildTree.js';
 
 const compareFiles = (file1, file2, format = 'stylish') => {
@@ -14,9 +15,12 @@ const compareFiles = (file1, file2, format = 'stylish') => {
   let data;
   switch (format) {
     case 'plain':
+      data = plain(compareObject);
+      break;
+    case 'stylish':
+      data = stylish(compareObject);
       break;
     default:
-      data = stylish(compareObject);
       break;
   }
   return data;
