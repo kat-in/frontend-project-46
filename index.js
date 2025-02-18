@@ -13,22 +13,21 @@ const compareFiles = (file1, file2, format = 'stylish') => {
   const secondObject = parsers(content2, path.extname(file2));
   const compareObject = buildTree(firstObject, secondObject);
 
-  let data;
   switch (format) {
     case 'plain':
-      data = plain(compareObject);
-      break;
+      return plain(compareObject);
+
     case 'stylish':
-      data = stylish(compareObject);
-      break;
+      return stylish(compareObject);
+
     case 'json':
-      data = json(compareObject);
-      break;
+      return json(compareObject);
+
     default:
       break;
   }
-  console.log(data);
-  return data;
+  // console.log(data);
+  throw new Error('Неизвестный формат');
   // return fs.writeFileSync("./__fixtures__/resultJson.json", data);
 };
 
