@@ -1,29 +1,27 @@
-import { fileURLToPath } from "url";
-import path, { dirname } from "path";
-import fs from "fs";
-import genDiff from "../src/genDiff.js";
-import parsers from "../src/parsers.js";
+import { fileURLToPath } from 'url';
+import path, { dirname } from 'path';
+import fs from 'fs';
+import compareFiles from '../index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const getFixturePath = (filename) =>
-  path.join(__dirname, "..", "__fixtures__", filename);
+const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
-test("Два файла json, формат по умолчанию", () => {
-  expect(
-    genDiff(
-      parsers(getFixturePath("file1.json")),
-      parsers(getFixturePath("file2.json"))
-    )
-  ).toBe(fs.readFileSync(getFixturePath("result.txt"), "utf-8"));
+test('Два файла json, формат по умолчанию', () => {
+  const firstPath = getFixturePath('file1.json');
+  const secondPath = getFixturePath('file2.json');
+  console.log(firstPath, secondPath);
+  expect(compareFiles(firstPath, secondPath)).toBe(
+    fs.readFileSync(getFixturePath('result.txt'), 'utf-8'),
+  );
 });
 
-test("Два файла yml, формат по умолчанию", () => {
-  expect(
-    genDiff(
-      parsers(getFixturePath("file3.yml")),
-      parsers(getFixturePath("file4.yml"))
-    )
-  ).toBe(fs.readFileSync(getFixturePath("result.txt"), "utf-8"));
+test('Два файла yml, формат по умолчанию', () => {
+  const firstPath = getFixturePath('file3.yml');
+  const secondPath = getFixturePath('file4.yml');
+  console.log(firstPath, secondPath);
+  expect(compareFiles(firstPath, secondPath)).toBe(
+    fs.readFileSync(getFixturePath('result.txt'), 'utf-8'),
+  );
 });
