@@ -11,11 +11,11 @@ const plain = (tree) => {
         ? `was added with value: ${value}`
         : `was added with value: '${value}'`;
 
-      const updatedOldValue = _.isBoolean(oldValue) || oldValue === null || _.isNumber(value)
+      const updatedOldValue = _.isBoolean(oldValue) || oldValue === null || _.isNumber(oldValue)
         ? `was updated. From ${oldValue}`
         : `was updated. From '${oldValue}'`;
 
-      const updatedNewValue = _.isBoolean(newValue) || newValue === null || _.isNumber(value)
+      const updatedNewValue = _.isBoolean(newValue) || newValue === null || _.isNumber(newValue)
         ? `to ${newValue}`
         : `to '${newValue}'`;
 
@@ -53,7 +53,7 @@ const plain = (tree) => {
         case 'nested-changed-added': {
           const currentNewValue = `Property '${keyDepth}${key}' ${updatedOldValue} ${updatedNewValue}`;
           const complexNewValue = `Property '${keyDepth}${key}' ${updatedOldValue} to [complex value]`;
-          return oldValue === undefined ? complexNewValue : currentNewValue;
+          return newValue === undefined ? complexNewValue : currentNewValue;
         }
 
         default:
