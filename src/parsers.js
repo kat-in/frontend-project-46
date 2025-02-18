@@ -7,7 +7,7 @@ const parsers = (file, format) => {
   if (format === '.yml' || format === '.yaml') {
     return yaml.load(file);
   }
-  throw new Error('Unknown format');
+  throw new Error(`Неизвестный формат ${format}`);
 };
 
 export default parsers;

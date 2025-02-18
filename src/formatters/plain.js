@@ -61,7 +61,7 @@ const plain = (tree) => {
       }
       return '';
     });
-    return _.compact(objToText).join('\n');
+    return _.compact(objToText).join('\n').trim();
   };
   return iter(tree, '');
 };

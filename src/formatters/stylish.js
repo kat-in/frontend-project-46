@@ -64,7 +64,7 @@ const stylish = (tree, replacer = '  ', spacesCount = 2) => {
       }
       return `${key}: ${value}`;
     });
-    return ['{', ...objToString, `${currentIndent}}`].join('\n');
+    return ['{', ...objToString, `${currentIndent}}`].join('\n').trim();
   };
   return iter(tree, 1);
 };

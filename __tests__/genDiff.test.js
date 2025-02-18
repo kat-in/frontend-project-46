@@ -18,6 +18,12 @@ describe('Сравнение JSON', () => {
     );
   });
 
+  test('Два файла json, формат stylish', () => {
+    expect(compareFiles(firstPath, secondPath, 'stylish')).toBe(
+      fs.readFileSync(getFixturePath('result.txt'), 'utf-8'),
+    );
+  });
+
   test('Два файла json, формат plain', () => {
     expect(compareFiles(firstPath, secondPath, 'plain')).toBe(
       fs.readFileSync(getFixturePath('resultPlain.txt'), 'utf-8'),
@@ -41,9 +47,21 @@ describe('Сравнение YML', () => {
     );
   });
 
+  test('Два файла yml, формат stylish', () => {
+    expect(compareFiles(firstPath, secondPath, 'stylish')).toBe(
+      fs.readFileSync(getFixturePath('result.txt'), 'utf-8'),
+    );
+  });
+
   test('Два файла yml, формат plain', () => {
     expect(compareFiles(firstPath, secondPath, 'plain')).toBe(
       fs.readFileSync(getFixturePath('resultPlain.txt'), 'utf-8'),
+    );
+  });
+
+  test('Два файла yml, формат json', () => {
+    expect(compareFiles(firstPath, secondPath, 'json')).toBe(
+      fs.readFileSync(getFixturePath('resultJson.json'), 'utf-8'),
     );
   });
 });
