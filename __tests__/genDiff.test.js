@@ -23,6 +23,12 @@ describe('Сравнение JSON', () => {
       fs.readFileSync(getFixturePath('resultPlain.txt'), 'utf-8'),
     );
   });
+
+  test('Два файла json, формат json', () => {
+    expect(compareFiles(firstPath, secondPath, 'json')).toBe(
+      fs.readFileSync(getFixturePath('resultJson.json'), 'utf-8'),
+    );
+  });
 });
 
 describe('Сравнение YML', () => {

@@ -3,6 +3,7 @@ import fs from 'fs';
 import parsers from './src/parsers.js';
 import stylish from './src/formatters/stylish.js';
 import plain from './src/formatters/plain.js';
+import json from './src/formatters/json.js';
 import buildTree from './src/buildTree.js';
 
 const compareFiles = (file1, file2, format = 'stylish') => {
@@ -20,11 +21,15 @@ const compareFiles = (file1, file2, format = 'stylish') => {
     case 'stylish':
       data = stylish(compareObject);
       break;
+    case 'json':
+      data = json(compareObject);
+      break;
     default:
       break;
   }
+  // console.log(data);
   return data;
-  // return fs.writeFileSync("./__fixtures__/resultTree.txt", data);
+  // return fs.writeFileSync("./__fixtures__/resultJson.json", data);
 };
 
 export default compareFiles;
