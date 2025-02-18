@@ -14,9 +14,8 @@ const getFormat = (compare, format) => {
       return json(compare);
 
     default:
-      break;
+      throw new Error('Неизвестный формат');
   }
-  throw new Error('Неизвестный формат');
 };
 
 export default getFormat;

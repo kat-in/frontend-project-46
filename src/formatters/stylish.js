@@ -60,9 +60,8 @@ const stylish = (tree, replacer = '  ', spacesCount = 2) => {
           )}`;
 
         default:
-          break;
+          throw new Error('Неизвестный статус');
       }
-      return `${key}: ${value}`;
     });
     return ['{', ...objToString, `${currentIndent}}`].join('\n').trim();
   };

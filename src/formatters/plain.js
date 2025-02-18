@@ -57,9 +57,8 @@ const plain = (tree) => {
         }
 
         default:
-          break;
+          throw new Error('Неизвестный статус');
       }
-      return '';
     });
     return _.compact(objToText).join('\n').trim();
   };
