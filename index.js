@@ -27,7 +27,7 @@ const compareFiles = (file1, file2, format = 'stylish') => {
     default:
       break;
   }
-  // console.log(data);
+  console.log(data);
   return data;
   // return fs.writeFileSync("./__fixtures__/resultJson.json", data);
 };

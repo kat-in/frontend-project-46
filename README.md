@@ -9,6 +9,6 @@
 
 [![asciicast](https://asciinema.org/a/kWZOZLdQTJMZrB76qbF0vnD9n.svg)](https://asciinema.org/a/kWZOZLdQTJMZrB76qbF0vnD9n)
 
-Сравнение файлов yml, json и yml, формат plain
+Сравнение файлов формат plain, json, stylish
 
-[![asciicast](https://asciinema.org/a/b7pvZEulcLxyhSiq87zQE1S3n.svg)](https://asciinema.org/a/b7pvZEulcLxyhSiq87zQE1S3n)
+[![asciicast](https://asciinema.org/a/jdHYrqkhIb4NNBfIp1ZIdNN71.svg)](https://asciinema.org/a/jdHYrqkhIb4NNBfIp1ZIdNN71)

@@ -3,7 +3,6 @@ import _ from 'lodash';
 const plain = (tree) => {
   const iter = (node, keyDepth) => {
     const objToText = node.map((currentNode) => {
-      console.log('currentNode в iter:', currentNode, '\n');
       const {
         key, status, value, children, newValue, oldValue,
       } = currentNode;
