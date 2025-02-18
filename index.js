@@ -18,6 +18,8 @@ const compareFiles = (file1, file2, format = 'stylish') => {
       return plain(compareObject);
 
     case 'stylish':
+      console.log(stylish(compareObject));
+      fs.writeFileSync('./__fixtures__/resultTree.txt', stylish(compareObject));
       return stylish(compareObject);
 
     case 'json':

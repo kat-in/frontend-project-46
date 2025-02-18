@@ -32,8 +32,8 @@ describe('Сравнение JSON', () => {
 });
 
 describe('Сравнение YML', () => {
-  const firstPath = getFixturePath('file3.yml');
-  const secondPath = getFixturePath('file4.yml');
+  const firstPath = getFixturePath('file1.yml');
+  const secondPath = getFixturePath('file2.yml');
 
   test('Два файла yml, формат по умолчанию', () => {
     expect(compareFiles(firstPath, secondPath)).toBe(
