@@ -7,15 +7,15 @@ const plain = (tree) => {
         key, status, value, children, newValue, oldValue,
       } = currentNode;
 
-      const addedValue = _.isBoolean(value) || newValue === null
+      const addedValue = _.isBoolean(value) || newValue === null || _.isNumber(value)
         ? `was added with value: ${value}`
         : `was added with value: '${value}'`;
 
-      const updatedOldValue = _.isBoolean(oldValue) || newValue === null
+      const updatedOldValue = _.isBoolean(oldValue) || newValue === null || _.isNumber(value)
         ? `was updated. From ${oldValue}`
         : `was updated. From '${oldValue}'`;
 
-      const updatedNewValue = _.isBoolean(newValue) || newValue === null
+      const updatedNewValue = _.isBoolean(newValue) || newValue === null || _.isNumber(value)
         ? `to ${newValue}`
         : `to '${newValue}'`;
 
